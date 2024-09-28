@@ -1,5 +1,6 @@
 package by.jenka.section2;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -10,7 +11,7 @@ public class PracticalTask {
         Random random = new Random();
         Vault vault = new Vault(random.nextInt(MAX_PASSWORD));
 
-        var threads = List.of(
+        List<Thread> threads = Arrays.asList(
                 new AscendingHackerThread(vault),
                 new DescendingHackerThread(vault),
                 new PoliceThread());

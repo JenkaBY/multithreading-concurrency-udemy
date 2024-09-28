@@ -1,7 +1,7 @@
 package by.jenka.section3;
 
 import java.math.BigInteger;
-import java.util.List;
+import java.util.Arrays;
 
 /**
  * Multithreaded Calculation
@@ -28,7 +28,7 @@ public class ComplexCalculation {
             throws InterruptedException {
         PowerCalculatingThread first = new PowerCalculatingThread(base1, power1);
         PowerCalculatingThread second = new PowerCalculatingThread(base2, power2);
-        return List.of(first, second).stream()
+        return Arrays.asList(first, second).stream()
                 .peek(Thread::start)
                 .peek(t -> {
                     try {
